@@ -1,0 +1,3 @@
+LIBRARY lib.pyd
+EXPORTS
+PyInit_lib
