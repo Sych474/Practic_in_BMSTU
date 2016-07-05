@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 #define INF 1000000
-#define N 5
+#define N 75
 
 
 struct vector

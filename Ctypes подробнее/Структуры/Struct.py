@@ -1,7 +1,10 @@
 from ctypes import *
+import time
 
 INF = 10**6
-name = 'list5.txt'
+start = 1
+name = 'list75.txt'
+start_time = time.time()
 matr_file = open(name)	
 N = int(matr_file.readline())
 
@@ -21,7 +24,6 @@ def print_vector(vect):
 	for i in range(N):
 		print(vect.arr[i])	
 
-
 matrix = matr()
 for i in range(N):
 	for j in range(N):
@@ -30,15 +32,13 @@ M = int(matr_file.readline())
 for k in range(M):
 	i,j,val = map(int,matr_file.readline().split())
 	matrix.arr[i].arr[j] = val
-
 matr_file.close()
-print_matr(matrix)
+#print('here 1')
 C_struct = CDLL("./structures.so")
-
 C_struct.Ford_Bellman.restype = vector
-
-start = 1
 F = vector()
+#print('here 2')
 F = C_struct.Ford_Bellman(matrix,start)
+#print('here 3')
+print((time.time()-start_time)*1000)
 
-print_vector(F)

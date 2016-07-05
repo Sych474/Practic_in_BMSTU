@@ -63,7 +63,7 @@ N_val = [100,500,1000,1500,2000,2500,3000]
 print('Матрица заполняется по правилу: matr[i][j] = i + j')
 print('Время заполениня матрицы N на N (приведено в миллисиекундах):')
 print('     N        C->int     C->numpy    C->ctypes|       numpy       append    generator  ')
-'''
+
 for N in N_val:
     print('{:7d}'.format(N),end = ' ')
     start = time.time()
@@ -91,7 +91,6 @@ for N in N_val:
     print('{:12.2f}'.format((time.time()-start)*1000))
 
 print('Слева от черты - способы с применением ctypes, справа - без применения этой библиотеки. ')
-'''
 def get_matr_max_C(N):
     C_vect = c_int * N # тип - массив 
     C_matr = C_vect * N # тип - матрица
